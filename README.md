@@ -1,5 +1,5 @@
 # Interactive Data Storytelling Hub 
-##A full-stack interactive data storytelling platform built with React.js, Flask, WebSocket, and D3.js. Users can create, view, and update stories with live interactive visualizations.
+## A full-stack interactive data storytelling platform built with React.js, Flask, WebSocket, and D3.js. Users can create, view, and update stories with live interactive visualizations.
 
 Tech stack:
 Frontend: React.js (Create React App)
@@ -51,6 +51,6 @@ Frontend:
 
 Frontend runs on port 3000
 
-##Access the App
+## Access the App
 Make sure backend is running on port 5000 for API calls and WebSocket
 Open frontend on port 3000 to interact with the app
