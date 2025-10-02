@@ -1,5 +1,5 @@
 # Interactive Data Storytelling Hub 
-# A full-stack interactive data storytelling platform built with React.js, Flask, WebSocket, and D3.js. Users can create, view, and update stories with live interactive visualizations.
+##A full-stack interactive data storytelling platform built with React.js, Flask, WebSocket, and D3.js. Users can create, view, and update stories with live interactive visualizations.
 
 Tech stack:
 Frontend: React.js (Create React App)
