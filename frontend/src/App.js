@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import * as d3 from 'd3';
 
+const API_URL = "http://127.0.0.1:5000";
+
 function App(){
   const [data,setData] = useState([]);
   const [stories,setStories] = useState([]);
@@ -10,11 +12,12 @@ function App(){
   const wsRef = useRef(null);
 
   useEffect(()=>{
-    fetch("/api/data").then(r=>r.json()).then(setData);
-    fetch("/api/stories").then(r=>r.json()).then(setStories);
+    // Fetch initial data + stories
+    fetch(`${API_URL}/api/data`).then(r=>r.json()).then(setData);
+    fetch(`${API_URL}/api/stories`).then(r=>r.json()).then(setStories);
 
     // connect websocket
-    wsRef.current = new WebSocket("ws://localhost:5000/ws");
+    wsRef.current = new WebSocket("ws://127.0.0.1:5000/ws");
     wsRef.current.onmessage = (e)=> console.log("WS:", e.data);
     return ()=> wsRef.current.close();
   },[]);
@@ -36,7 +39,7 @@ function App(){
   },[data]);
 
   const saveStory = ()=>{
-    fetch("/api/stories",{
+    fetch(`${API_URL}/api/stories`,{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({title,content})
