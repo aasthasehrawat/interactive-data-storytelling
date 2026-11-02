@@ -205,3 +205,16 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Node
+node_modules/
+
+# Runtime local storage
+backend/stories.json
+backend/stories.json.tmp
+backend/users.json
+backend/users.json.tmp
+backend/sessions.json
+backend/sessions.json.tmp
+backend/bookmarks.json
+backend/bookmarks.json.tmp

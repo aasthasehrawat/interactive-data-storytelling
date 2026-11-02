@@ -1,56 +1,55 @@
-# Interactive Data Storytelling Hub 
-A full-stack interactive data storytelling platform built with React.js, Flask, WebSocket, and D3.js. Users can create, view, and update stories with live interactive visualizations.
+# Interactive Data Storytelling Hub
 
-Tech stack:
-Frontend: React.js (Create React App)
-Data Visualization: D3.js
-Backend: Flask (REST APIs)
-Real-time Communication: Flask-Sock (WebSocket support)
-Full-stack features: Story persistence, live data channel updates
+A full-stack portfolio app where users **sign up / log in**, browse **chaptered data stories**, and understand the narrative through **interactive charts** that change with each chapter.
 
-Features
-- Interactive story creation and visualization
-- Live updates via WebSocket
-- Clean, responsive React frontend
-- Persistent backend using Flask REST APIs
+## Product flow
+
+1. **Auth** — create an account or log in  
+2. **Library** — explore featured stories, search/filter by tags, bookmark favorites  
+3. **Reader** — move chapter by chapter; the chart syncs (trend lines or year ranking bars)  
+4. **Composer** — write your own guided story with per-chapter chart controls  
+
+## Dataset
+
+**The Global Digital Divide** — illustrative internet-access rates (% of population) for India, USA, China, Brazil, Nigeria, and Japan from 2015–2022. Built for storytelling demos (not an official statistical release).
+
+## Tech stack
+
+- **Frontend:** React (Create React App), D3.js  
+- **Backend:** Flask REST API, Flask-Sock WebSockets  
+- **Auth:** signup/login sessions with hashed passwords  
+- **Persistence:** JSON files for users, sessions, stories, bookmarks  
 
 ## Quickstart
 
-Backend:
-1. Navigate to the backend folder:
-   cd backend
+### Backend
 
-2. Create a virtual environment:
-   python -m venv venv
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate          # Windows
+# source venv/bin/activate     # Mac/Linux
+pip install -r requirements.txt
+python app.py
+```
 
+API runs on [http://localhost:5000](http://localhost:5000)
 
-3. Activate the virtual environment:
-   Windows:
-   venv\Scripts\activate
- 
-   Mac/Linux:
-   source venv/bin/activate
+### Frontend
 
-4. Install dependencies:
-   pip install -r requirements.txt
+```bash
+cd frontend
+npm install
+npm start
+```
 
-5. Run the backend server:
-   python app.py
+App runs on [http://localhost:3000](http://localhost:3000)
 
-Backend runs on port 5000
+## Highlights for reviewers
 
-Frontend:
-1. Navigate to the frontend folder:
-   cd frontend
-   
-2.Install dependencies:
-  npm install
-
-3. Start the React development server:
-   npm start
-
-Frontend runs on port 3000
-
-## Access the App
-- Make sure backend is running on port 5000 for API calls and WebSocket
-- Open frontend on port 3000 to interact with the app.
+- Auth-gated storytelling experience  
+- Chapter → chart synchronization (line + bar modes)  
+- Dataset insights banner (fastest climb, highest access, gap)  
+- Live story updates over WebSocket  
+- Bookmarking, search, and tag filters  
+- Story composer with per-chapter visualization controls  
